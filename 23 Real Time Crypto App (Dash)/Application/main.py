@@ -172,7 +172,7 @@ def update_content(currency, time_change):
     """This function fetches the data from the coin API and returns the prices, volumes and the graph"""
     with open('./coin_api_key.json') as file:
         apikey = json.load(file).get('key')
-    url = f"https://rest.coinapi.io/v1/ohlcv/{currency}/USD/latest?period_id={time_change}"
+    url = f'https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_{currency}_USD/latest?period_id={time_change}'
     header = {'X-CoinAPI-KEY': apikey}
     response = requests.get(url, headers=header)
     data = response.json()
